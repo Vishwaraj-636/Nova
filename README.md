@@ -64,37 +64,3 @@ x is smaller than y
 60
 true
 ```
-
-## How to check correctness
-
-1. The build command succeeds with no compiler errors.
-2. Running `.\nova` prints the demo output in the terminal instead of opening the source file.
-3. The `if` branch should print the message for `x < y`.
-4. The `while` loop should run until `x` reaches 15.
-5. The final output should include the total and `true` for `x == 15`.
-
-If you want to test error handling, try removing a semicolon or using an undefined variable; the interpreter should print a line-numbered error and return a nonzero exit code.
-
-## How to explain it in an interview
-
-Use this structure when asked about the project:
-
-1. Start with the goal: you built a small interpreter in C++17 for a custom language.
-2. Explain the pipeline: source text is tokenized, parsed, and then executed.
-3. Mention the main features: variables, expressions, `print`, `if` / `else`, and `while`.
-4. Point out the design choice: each component has a single job, which keeps the project maintainable.
-5. Mention the current limitation honestly: this is an interpreter, not a full optimizing compiler.
-
-## Good talking points
-
-1. Lexing rules for keywords, identifiers, numbers, strings, operators, and comments.
-2. Runtime evaluation using a simple environment for variables.
-3. Error handling with line-numbered messages.
-4. Extensibility toward functions, arrays, or a bytecode backend later.
-
-## Suggested next improvements
-
-1. Add a test suite for lexer and interpreter behavior.
-2. Add function declarations and function calls.
-3. Add a proper AST and separate parser stage if you want a stronger compiler story.
-4. Add better error recovery and clearer runtime diagnostics.
