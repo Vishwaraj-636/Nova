@@ -1,0 +1,23 @@
+let x = 10;
+let y = 20;
+let total = 0;
+
+print("Nova runtime demo");
+print(x);
+print(y);
+print(x+y);
+print(x + y);
+
+if (x < y) {
+	print("x is smaller than y");
+} else {
+	print("x is not smaller than y");
+}
+
+while (x < 15) {
+	total = total + x;
+	x = x + 1;
+}
+
+print(total);
+print(x == 15);

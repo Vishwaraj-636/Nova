@@ -4,42 +4,46 @@
 
 enum class TokenType
 {
-    // literals
-    NUMBER,
-    IDENTIFIER,
+    // Single-character tokens
+    LEFT_PAREN,
+    RIGHT_PAREN,
+    LEFT_BRACE,
+    RIGHT_BRACE,
+    COMMA,
+    DOT,
+    MINUS,
+    PLUS,
+    SEMICOLON,
+    SLASH,
+    STAR,
+    MOD,
 
-    // keywords
+    // One or two character tokens
+    BANG,
+    BANG_EQUAL,
+
+    EQUAL,
+    EQUAL_EQUAL,
+
+    GREATER,
+    GREATER_EQUAL,
+
+    LESS,
+    LESS_EQUAL,
+
+    // Literals
+    IDENTIFIER,
+    STRING,
+    NUMBER,
+
+    // Keywords
     LET,
     PRINT,
     IF,
     ELSE,
     WHILE,
-
-    // operators
-    PLUS,
-    MINUS,
-    STAR,
-    SLASH,
-
-    ASSIGN,
-
-    EQUAL,
-    NOT_EQUAL,
-
-    LESS,
-    LESS_EQUAL,
-
-    GREATER,
-    GREATER_EQUAL,
-
-    // punctuation
-    LPAREN,
-    RPAREN,
-
-    LBRACE,
-    RBRACE,
-
-    SEMICOLON,
+    TRUE,
+    FALSE,
 
     END_OF_FILE
 };
@@ -51,13 +55,12 @@ struct Token
     int line;
 
     Token(
-        TokenType type,
-        std::string lexeme,
-        int line)
+        TokenType t,
+        const std::string& l,
+        int ln)
         :
-        type(type),
-        lexeme(std::move(lexeme)),
-        line(line)
-    {
-    }
+        type(t),
+        lexeme(l),
+        line(ln)
+    {}
 };
